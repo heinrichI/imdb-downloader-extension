@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "imdb downloader",
+  "version": "1.0",
+  "description": "imdb downloader",
+
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": [
+        "https://www.imdb.com/*"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "scripts/service-worker.js",
+    "type": "module"
+  },
+  "host_permissions": [
+    "https://www.imdb.com/*",
+    "http://example.com/*"
+  ]
+}
